@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Basket - Fruit Shop</title>
+    <title>Fresh Avocado - Fruit Shop</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -35,24 +35,19 @@
     </header>
     <main id="main-content" role="main">
       <div class="content-box">
-        <h1>Your Shopping Basket</h1>
-        <ul
-          class="order-list"
-          id="basketList"
-          aria-label="Shopping basket items"
-        ></ul>
-        <div class="cart-total" id="totalPrice" aria-label="Cart total price"></div>
-        <div class="cart-buttons-row" role="group" aria-label="Basket actions">
-          <button id="clearBasket" aria-label="Clear all items from basket">
-            Clear Basket
-          </button>
-          <a
-            href="checkout.html"
-            id="checkoutLink"
-            aria-label="Proceed to checkout"
+        <div class="emoji-display" role="img" aria-label="Avocado emoji">🥑</div>
+        <h1>Avocado</h1>
+        <div class="product-desc" aria-label="Product description">
+          Creamy and nutrient-rich - guacamole's best friend!
+        </div>
+        <div class="button-container">
+          <button
+            id="addToBasket"
+            class="cart-action-btn"
+            aria-label="Add Avocado to basket"
           >
-            <button id="checkoutBtn">Checkout</button>
-          </a>
+            Add to Basket
+          </button>
         </div>
       </div>
     </main>
@@ -67,13 +62,9 @@
     </footer>
     <script src="shop.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        renderBasket();
-        document.getElementById("clearBasket").onclick = function () {
-          clearBasket();
-          renderBasket();
-        };
-      });
+      document.getElementById("addToBasket").onclick = function () {
+        addToBasket("avocado");
+      };
     </script>
   </body>
 </html>
