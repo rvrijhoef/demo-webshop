@@ -41,6 +41,7 @@
           id="basketList"
           aria-label="Shopping basket items"
         ></ul>
+        <div class="cart-total" id="totalPrice" aria-label="Cart total price"></div>
         <div class="cart-buttons-row" role="group" aria-label="Basket actions">
           <button id="clearBasket" aria-label="Clear all items from basket">
             Clear Basket
@@ -66,11 +67,13 @@
     </footer>
     <script src="shop.js"></script>
     <script>
-      renderBasket();
-      document.getElementById("clearBasket").onclick = function () {
-        clearBasket();
+      document.addEventListener("DOMContentLoaded", function () {
         renderBasket();
-      };
+        document.getElementById("clearBasket").onclick = function () {
+          clearBasket();
+          renderBasket();
+        };
+      });
     </script>
   </body>
 </html>
